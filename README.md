@@ -1,6 +1,9 @@
 # Location Tracking App
 
-A Flutter app that continuously tracks device location in the foreground and background, displaying real-time and last-known position data.
+A Flutter app that continuously tracks device location in the foreground, background, or terminated. Displaying real-time and last-known position data, also have a toggle button to stop track location.
+
+<img width="289" height="503" alt="image" src="https://github.com/user-attachments/assets/0faaef92-6282-4c21-958f-4dbabcf04981" />
+
 
 ## Features
 
