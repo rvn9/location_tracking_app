@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:location_tracking_app/features/location/application/is_location_tracking.dart';
+import 'package:location_tracking_app/features/location/application/is_tracking_location.dart';
 import 'package:location_tracking_app/features/location/data/datasources/local_data_source/location_manager.dart';
 import 'package:location_tracking_app/features/location/presentation/location_card.dart';
 
@@ -13,7 +13,7 @@ class LocationTrackingPage extends ConsumerWidget {
         .watch(locationManagerProvider)
         .lastKnownPosition;
     final locationAsync = ref.watch(locationStreamProvider);
-    final isTrackingState = ref.watch(isLocationTrackingProvider);
+    final isTrackingState = ref.watch(isTrackingLocationProvider);
     final isTracking = isTrackingState.value ?? false;
     final manager = ref.read(locationManagerProvider);
 

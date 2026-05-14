@@ -1,6 +1,6 @@
 // GENERATED CODE - DO NOT MODIFY BY HAND
 
-part of 'is_location_tracking.dart';
+part of 'is_tracking_location.dart';
 
 // **************************************************************************
 // RiverpodGenerator
@@ -9,34 +9,34 @@ part of 'is_location_tracking.dart';
 // GENERATED CODE - DO NOT MODIFY BY HAND
 // ignore_for_file: type=lint, type=warning
 
-@ProviderFor(IsLocationTracking)
-final isLocationTrackingProvider = IsLocationTrackingProvider._();
+@ProviderFor(IsTrackingLocation)
+final isTrackingLocationProvider = IsTrackingLocationProvider._();
 
-final class IsLocationTrackingProvider
-    extends $AsyncNotifierProvider<IsLocationTracking, bool> {
-  IsLocationTrackingProvider._()
+final class IsTrackingLocationProvider
+    extends $AsyncNotifierProvider<IsTrackingLocation, bool> {
+  IsTrackingLocationProvider._()
     : super(
         from: null,
         argument: null,
         retry: null,
-        name: r'isLocationTrackingProvider',
+        name: r'isTrackingLocationProvider',
         isAutoDispose: false,
         dependencies: null,
         $allTransitiveDependencies: null,
       );
 
   @override
-  String debugGetCreateSourceHash() => _$isLocationTrackingHash();
+  String debugGetCreateSourceHash() => _$isTrackingLocationHash();
 
   @$internal
   @override
-  IsLocationTracking create() => IsLocationTracking();
+  IsTrackingLocation create() => IsTrackingLocation();
 }
 
-String _$isLocationTrackingHash() =>
-    r'bb93c9af150837de1428f679cbc7d4604afb163c';
+String _$isTrackingLocationHash() =>
+    r'5b6a1321dc5b05012cbdc2158c094cb580bb5d91';
 
-abstract class _$IsLocationTracking extends $AsyncNotifier<bool> {
+abstract class _$IsTrackingLocation extends $AsyncNotifier<bool> {
   FutureOr<bool> build();
   @$mustCallSuper
   @override

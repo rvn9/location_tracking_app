@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:flutter_background_geolocation/flutter_background_geolocation.dart'
     as bg;
-import 'package:location_tracking_app/features/location/application/is_location_tracking.dart';
+import 'package:location_tracking_app/features/location/application/is_tracking_location.dart';
 import 'package:location_tracking_app/utils/in_memory_store.dart';
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
@@ -30,24 +30,27 @@ class LocationManager {
   bg.Location? get currentPosition => _currentPosition.value;
   bg.Location? get lastKnownPosition => _lastKnownPosition.value;
 
-  bool get isTracking => _ref.read(isLocationTrackingProvider).value ?? false;
+  bool get isTracking => _ref.read(isTrackingLocationProvider).value ?? false;
 
   void _setTracking(bool value) => _ref
-      .read(isLocationTrackingProvider.notifier)
-      .setIsLocationTracking(isTracking: value);
+      .read(isTrackingLocationProvider.notifier)
+      .setIsTrackingLocation(isTracking: value);
 
   Future<void> init() async {
     if (_initialized) return;
     _initialized = true;
     try {
+      // Request permission
       await bg.BackgroundGeolocation.requestPermission();
 
+      // Listen to location changes
       bg.BackgroundGeolocation.onLocation((bg.Location location) {
         if (location.sample == true) return;
         _currentPosition.value = location;
         if (!location.isMoving) _lastKnownPosition.value = location;
       }, (bg.LocationError error) => debugPrint(error.toString()));
 
+      // Initialize background geolocation
       await bg.BackgroundGeolocation.ready(
         bg.Config(
           debug: true,
@@ -71,6 +74,8 @@ class LocationManager {
       );
 
       final state = await bg.BackgroundGeolocation.state;
+
+      // Start tracking if not already enabled
       if (!state.enabled) {
         await bg.BackgroundGeolocation.start();
       } else {
@@ -81,6 +86,7 @@ class LocationManager {
     }
   }
 
+  // Start timer to update last known location every 5 seconds
   void _startTimer() {
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 5), (timer) {

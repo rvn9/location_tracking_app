@@ -49,7 +49,7 @@ final class LocationManagerProvider
   }
 }
 
-String _$locationManagerHash() => r'5580479a3aad3ac002cac806b9ded55ef4483943';
+String _$locationManagerHash() => r'7726f1a0162ebb7c055cec9a2e2a48a35241884c';
 
 @ProviderFor(locationStream)
 final locationStreamProvider = LocationStreamProvider._();
