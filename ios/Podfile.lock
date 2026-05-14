@@ -1,0 +1,39 @@
+PODS:
+  - connectivity_plus (0.0.1):
+    - Flutter
+  - Flutter (1.0.0)
+  - flutter_background_geolocation (5.1.2):
+    - Flutter
+    - TSLocationManager (~> 4.1.0)
+  - TSBackgroundFetch (4.1.1)
+  - TSLocationManager (4.1.7):
+    - TSBackgroundFetch (~> 4.1.0)
+
+DEPENDENCIES:
+  - connectivity_plus (from `.symlinks/plugins/connectivity_plus/ios`)
+  - Flutter (from `Flutter`)
+  - flutter_background_geolocation (from `.symlinks/plugins/flutter_background_geolocation/ios`)
+
+SPEC REPOS:
+  trunk:
+    - TSBackgroundFetch
+    - TSLocationManager
+
+EXTERNAL SOURCES:
+  connectivity_plus:
+    :path: ".symlinks/plugins/connectivity_plus/ios"
+  Flutter:
+    :path: Flutter
+  flutter_background_geolocation:
+    :path: ".symlinks/plugins/flutter_background_geolocation/ios"
+
+SPEC CHECKSUMS:
+  connectivity_plus: cb623214f4e1f6ef8fe7403d580fdad517d2f7dd
+  Flutter: cabc95a1d2626b1b06e7179b784ebcf0c0cde467
+  flutter_background_geolocation: 1e75dac050fd6dd7c59c497edf7aa755dfde3eb7
+  TSBackgroundFetch: 18918b6449a1e3f01eb0f5b44d6d79ce6160a5a5
+  TSLocationManager: 0c1b8ed109ae05ea4247def2992b3e4e3f49f839
+
+PODFILE CHECKSUM: 4602ae40f521c30f23b568102641dad26512d2b1
+
+COCOAPODS: 1.16.2
